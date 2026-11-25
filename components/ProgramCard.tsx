@@ -31,7 +31,7 @@ export default function ProgramCard({
           <img
             src={p.image}
             alt={p.title}
-            className="h-64 w-full object-cover transition duration-500 group-hover:scale-105 md:h-full"
+            className="h-64 w-full object-cover transition duration-500 group-hover:scale-105 md:h-[24rem]"
           />
           <span className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-full bg-red-700 font-display text-lg text-white shadow-lg">
             {num}
@@ -104,9 +104,9 @@ export default function ProgramCard({
           </p>
         )}
         <div className="mt-4 flex items-center justify-between border-t border-white/25 pt-4">
-          <p className="text-sm text-white">
+          <span className="rounded-full bg-white/90 px-3 py-1 text-sm backdrop-blur">
             <CoursePriceLine />
-          </p>
+          </span>
           <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-lg text-red-700 transition group-hover:bg-red-700 group-hover:text-white">
             →
           </span>
