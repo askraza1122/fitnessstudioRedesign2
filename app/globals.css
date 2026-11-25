@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white font-sans text-neutral-900 antialiased;
+}
+
+/* Premium editorial display face for all headings site-wide */
+h1,
+h2 {
+  @apply font-display;
+  letter-spacing: -0.01em;
+}
+
+/* Hero entrance + floating-chip motion */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s ease-out both;
+}
+
+.animate-float-soft {
+  animation: float-soft 5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .animate-float-soft {
+    animation: none;
+  }
+}
+
+::selection {
+  @apply bg-red-700 text-white;
+}
+
+/* Redesign display utilities: outlined display line + red kicker */
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 2px #141414;
+}
+
+.kicker {
+  @apply text-xs font-bold uppercase tracking-[0.25em] text-red-700;
+}

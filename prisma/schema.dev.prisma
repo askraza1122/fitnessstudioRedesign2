@@ -1,0 +1,102 @@
+// Prisma schema — DEV ONLY (SQLite fallback for local verification).
+// Use this ONLY when no Postgres is available locally. The committed
+// production schema is prisma/schema.prisma (PostgreSQL) — never change
+// its provider. Generate/push with:
+//   npx prisma generate --schema=prisma/schema.dev.prisma
+//   npx prisma db push --schema=prisma/schema.dev.prisma
+//   DATABASE_URL="file:./dev.db" npx tsx prisma/seed.ts
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// Roles and statuses are plain Strings (no Postgres enums) so the models
+// stay portable between the production Postgres schema and the dev SQLite
+// schema. Valid values are documented per field.
+
+model User {
+  id           String   @id @default(cuid())
+  name         String
+  email        String   @unique
+  passwordHash String
+  role         String   @default("student") // "student" | "admin"
+  phone        String?
+  createdAt    DateTime @default(now())
+
+  enrollments Enrollment[]
+  progress    LectureProgress[]
+}
+
+model Course {
+  id            String   @id @default(cuid())
+  slug          String   @unique
+  title         String
+  description   String
+  durationWeeks Int      @default(4)
+  image         String
+  createdAt     DateTime @default(now())
+
+  lectures    Lecture[]
+  enrollments Enrollment[]
+}
+
+model Lecture {
+  id              String   @id @default(cuid())
+  courseId        String
+  course          Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  order           Int
+  title           String
+  description     String?
+  videoUrl        String?
+  durationSeconds Int?
+  isFree          Boolean  @default(false)
+  createdAt       DateTime @default(now())
+
+  progress LectureProgress[]
+
+  @@unique([courseId, order])
+}
+
+model Enrollment {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  courseId  String
+  course    Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  tier      String // "one_to_one" | "group" | "home" | "flat"
+  currency  String // "PKR" | "SAR" | "AED"
+  status    String   @default("requested") // "requested" | "paid" | "unlocked" | "rejected"
+  createdAt DateTime @default(now())
+  decidedBy String?
+  decidedAt DateTime?
+
+  @@unique([userId, courseId])
+}
+
+model LectureProgress {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lectureId   String
+  lecture     Lecture  @relation(fields: [lectureId], references: [id], onDelete: Cascade)
+  completedAt DateTime @default(now())
+
+  @@unique([userId, lectureId])
+}
+
+model Order {
+  id        String   @id @default(cuid())
+  name      String
+  phone     String
+  address   String
+  city      String
+  items     String // JSON string: [{ slug, name, qty, price }]
+  total     Int // PKR, computed server-side from PRODUCTS
+  status    String   @default("new") // "new" | "confirmed" | "delivered" | "cancelled"
+  createdAt DateTime @default(now())
+}
