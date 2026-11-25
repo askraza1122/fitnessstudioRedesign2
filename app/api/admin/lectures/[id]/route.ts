@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { requireAdmin } from "@/lib/admin-api";
 
-/** Admin: edit a lecture's title / description / video URL / order. */
+/** Admin: edit a lecture's title / description / video URL / order / free flag. */
 export async function PATCH(
   req: Request,
   { params }: { params: Promise<{ id: string }> }
@@ -16,6 +16,7 @@ export async function PATCH(
     description?: string | null;
     videoUrl?: string | null;
     order?: number;
+    isFree?: boolean;
   };
   try {
     body = await req.json();
@@ -33,6 +34,7 @@ export async function PATCH(
     description?: string | null;
     videoUrl?: string | null;
     order?: number;
+    isFree?: boolean;
   } = {};
 
   if (body.title !== undefined) {
@@ -65,6 +67,9 @@ export async function PATCH(
       );
     }
     data.order = order;
+  }
+  if (body.isFree !== undefined) {
+    data.isFree = body.isFree === true;
   }
 
   try {

@@ -98,12 +98,32 @@ export function OrderActions({ id, status }: { id: string; status: string }) {
   };
 
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex flex-wrap items-center gap-2">
+      {/* One-click next step — faster than the dropdown for the daily flow */}
+      {status === "new" && (
+        <button
+          onClick={() => setStatus("confirmed")}
+          disabled={busy}
+          className="rounded-full bg-red-700 px-3 py-1.5 text-xs font-semibold text-white hover:bg-red-800 disabled:opacity-50"
+        >
+          {busy ? "Saving…" : "Confirm order"}
+        </button>
+      )}
+      {status === "confirmed" && (
+        <button
+          onClick={() => setStatus("delivered")}
+          disabled={busy}
+          className="rounded-full bg-green-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-green-700 disabled:opacity-50"
+        >
+          {busy ? "Saving…" : "Mark delivered"}
+        </button>
+      )}
       <select
         value={status}
         disabled={busy}
         onChange={(e) => setStatus(e.target.value)}
         className="rounded-lg border border-neutral-300 px-2 py-1.5 text-xs font-medium outline-none focus:border-red-700"
+        aria-label="Order status"
       >
         {["new", "confirmed", "delivered", "cancelled"].map((s) => (
           <option key={s} value={s}>

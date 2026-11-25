@@ -17,6 +17,14 @@ h2 {
   letter-spacing: -0.01em;
 }
 
+/* Admin panel: readable Inter headings, not the condensed display face —
+   an admin works in this UI all day, so legibility beats editorial style. */
+.admin-scope h1,
+.admin-scope h2 {
+  font-family: var(--font-body);
+  letter-spacing: -0.02em;
+}
+
 /* Hero entrance + floating-chip motion */
 @keyframes fade-up {
   from {
