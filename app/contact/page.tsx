@@ -87,13 +87,6 @@ export default function ContactPage() {
                 Chat on WhatsApp
               </a>
             </div>
-
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/training/contact-training.jpg"
-              alt="Training at Fitness Studio"
-              className="mt-10 w-full rounded-[2rem] object-cover shadow-sm"
-            />
           </div>
 
           <div className="h-fit rounded-[2rem] border border-neutral-200 bg-white p-6 shadow-sm md:p-8">
