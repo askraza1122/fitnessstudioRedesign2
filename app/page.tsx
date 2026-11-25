@@ -54,7 +54,7 @@ export default function HomePage() {
   return (
     <div>
       {/* Marquee — the modern signature right under the header */}
-      <div className="overflow-hidden bg-red-700 py-3" aria-hidden>
+      <div className="overflow-hidden bg-calm py-3" aria-hidden>
         <div className="flex w-max animate-marquee">
           {[0, 1].map((half) => (
             <span
@@ -64,7 +64,7 @@ export default function HomePage() {
               {MARQUEE_WORDS.map((w) => (
                 <span key={w} className="flex items-center">
                   <span className="px-5">{w}</span>
-                  <span className="text-red-300">✦</span>
+                  <span className="text-white/50">✦</span>
                 </span>
               ))}
             </span>
@@ -80,7 +80,7 @@ export default function HomePage() {
         />
         <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 pb-16 pt-10 md:grid-cols-12 md:pb-24 md:pt-14">
           <div className="animate-fade-up md:col-span-7">
-            <p className="inline-flex items-center gap-2 rounded-full bg-red-700 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white">
+            <p className="inline-flex items-center gap-2 rounded-full bg-calm px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white">
               Women-only studio · Lahore · Est. by Ayeesha Muzammil
             </p>
             <h1 className="mt-6 font-display text-[16vw] leading-[0.9] text-neutral-900 sm:text-8xl md:text-[7.5rem]">
@@ -155,7 +155,7 @@ export default function HomePage() {
                   key={b.title}
                   className="flex items-center gap-3 rounded-2xl border border-neutral-200 bg-white px-4 py-3 shadow-sm"
                 >
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-red-50 text-red-700">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-calm-light text-calm">
                     {b.icon}
                   </span>
                   <span>
@@ -217,7 +217,7 @@ export default function HomePage() {
               <span className="font-display text-2xl tracking-wide text-neutral-800">
                 {name}
               </span>
-              {i < arr.length - 1 && <span className="text-red-700">✦</span>}
+              {i < arr.length - 1 && <span className="text-calm">✦</span>}
             </span>
           ))}
         </div>
@@ -231,7 +231,7 @@ export default function HomePage() {
               key={s.label}
               className="rounded-[2rem] border border-neutral-200 bg-white p-6 shadow-sm"
             >
-              <p className="font-display text-6xl leading-none text-red-700">
+              <p className="font-display text-6xl leading-none text-calm">
                 {s.value}
               </p>
               <p className="mt-3 text-sm font-bold uppercase tracking-wider text-neutral-900">
@@ -247,7 +247,7 @@ export default function HomePage() {
       <section className="mx-auto max-w-7xl px-4 py-16 md:py-24">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <p className="inline-block rounded-full bg-red-700 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white">
+            <p className="inline-block rounded-full bg-calm px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white">
               Training Programs
             </p>
             <h2 className="mt-4 font-display text-5xl leading-[0.95] text-neutral-900 md:text-7xl">
@@ -299,7 +299,7 @@ export default function HomePage() {
       {/* Pricing — featured middle card in red */}
       <section id="pricing" className="border-y border-neutral-200 bg-neutral-50 py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4">
-          <p className="inline-block rounded-full bg-red-700 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white">
+          <p className="inline-block rounded-full bg-calm px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white">
             Pricing
           </p>
           <h2 className="mt-4 font-display text-5xl leading-[0.95] text-neutral-900 md:text-7xl">
@@ -352,7 +352,7 @@ export default function HomePage() {
                       <li key={f} className="flex items-center gap-2.5">
                         <span
                           className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-xs ${
-                            featured ? "bg-white text-red-700" : "bg-red-50 text-red-700"
+                            featured ? "bg-white text-red-700" : "bg-calm-light text-calm"
                           }`}
                         >
                           ✓
@@ -390,7 +390,7 @@ export default function HomePage() {
           <div className="relative">
             <div
               aria-hidden
-              className="absolute inset-0 -rotate-2 rounded-[2.5rem] bg-red-700"
+              className="absolute inset-0 -rotate-2 rounded-[2.5rem] bg-calm"
             />
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -408,7 +408,7 @@ export default function HomePage() {
             </div>
           </div>
           <div>
-            <p className="inline-block rounded-full bg-red-700 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white">
+            <p className="inline-block rounded-full bg-calm px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white">
               Founder
             </p>
             <h2 className="mt-4 font-display text-5xl leading-[0.95] text-neutral-900 md:text-6xl">
@@ -454,7 +454,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
-              <p className="inline-block rounded-full bg-red-700 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white">
+              <p className="inline-block rounded-full bg-calm px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white">
                 Shop
               </p>
               <h2 className="mt-4 font-display text-5xl leading-[0.95] text-neutral-900 md:text-7xl">
@@ -520,7 +520,7 @@ export default function HomePage() {
 
       {/* Your 4 weeks — timeline */}
       <section className="mx-auto max-w-7xl px-4 py-16 md:py-24">
-        <p className="inline-block rounded-full bg-red-700 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white">
+        <p className="inline-block rounded-full bg-calm px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white">
           How It Works
         </p>
         <h2 className="mt-4 font-display text-5xl leading-[0.95] text-neutral-900 md:text-7xl">
@@ -529,7 +529,7 @@ export default function HomePage() {
         <div className="relative mt-12">
           <div
             aria-hidden
-            className="absolute left-0 right-0 top-7 hidden h-0.5 bg-red-200 lg:block"
+            className="absolute left-0 right-0 top-7 hidden h-0.5 bg-calm/25 lg:block"
           />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
@@ -542,10 +542,10 @@ export default function HomePage() {
                 key={st.week}
                 className="relative rounded-[2rem] border border-neutral-200 bg-white p-6 shadow-sm"
               >
-                <span className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full bg-red-700 font-display text-xl text-white">
+                <span className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full bg-calm font-display text-xl text-white">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <p className="mt-5 text-xs font-bold uppercase tracking-[0.25em] text-red-700">
+                <p className="mt-5 text-xs font-bold uppercase tracking-[0.25em] text-calm">
                   {st.week}
                 </p>
                 <h3 className="mt-2 font-display text-2xl text-neutral-900">
@@ -565,7 +565,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
-              <p className="inline-block rounded-full bg-red-700 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white">
+              <p className="inline-block rounded-full bg-calm px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white">
                 Recognition
               </p>
               <h2 className="mt-4 font-display text-5xl leading-[0.95] text-neutral-900 md:text-7xl">
@@ -585,7 +585,7 @@ export default function HomePage() {
                 <span className="font-display text-2xl text-neutral-900 md:text-3xl">
                   {a}
                 </span>
-                <span className="text-red-700">✦</span>
+                <span className="text-calm">✦</span>
               </span>
             ))}
           </div>
@@ -606,7 +606,7 @@ export default function HomePage() {
 
       {/* Testimonials */}
       <section className="mx-auto max-w-7xl px-4 py-16 md:py-24">
-        <p className="inline-block rounded-full bg-red-700 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white">
+        <p className="inline-block rounded-full bg-calm px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white">
           Testimonials
         </p>
         <h2 className="mt-4 font-display text-5xl leading-[0.95] text-neutral-900 md:text-7xl">
@@ -618,14 +618,14 @@ export default function HomePage() {
               key={t.name}
               className="rounded-[2rem] border border-neutral-200 bg-white p-7 shadow-sm"
             >
-              <span className="font-display text-6xl leading-none text-red-700">
+              <span className="font-display text-6xl leading-none text-calm">
                 &ldquo;
               </span>
               <blockquote className="leading-relaxed text-neutral-700">
                 &ldquo;{t.quote}&rdquo;
               </blockquote>
               <figcaption className="mt-6 flex items-center gap-3 border-t border-neutral-100 pt-5">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-red-700 font-display text-sm text-white">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-calm font-display text-sm text-white">
                   {t.name
                     .split(" ")
                     .map((w) => w[0])
@@ -647,7 +647,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
-              <p className="inline-block rounded-full bg-red-700 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white">
+              <p className="inline-block rounded-full bg-calm px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white">
                 Partners
               </p>
               <h2 className="mt-4 font-display text-4xl leading-none text-neutral-900 md:text-5xl">
@@ -665,12 +665,12 @@ export default function HomePage() {
             {MOU_PARTNERS.slice(0, 8).map((name) => (
               <span
                 key={name}
-                className="rounded-2xl border border-neutral-300 bg-white px-5 py-3 text-sm font-semibold text-neutral-700 transition hover:border-red-700 hover:text-red-700"
+                className="rounded-2xl border border-neutral-300 bg-white px-5 py-3 text-sm font-semibold text-neutral-700 transition hover:border-calm hover:text-calm"
               >
                 {name}
               </span>
             ))}
-            <span className="rounded-2xl bg-red-700 px-5 py-3 text-sm font-bold text-white">
+            <span className="rounded-2xl bg-calm px-5 py-3 text-sm font-bold text-white">
               + {MOU_PARTNERS.length - 8} more
             </span>
           </div>
@@ -712,7 +712,7 @@ export default function HomePage() {
 
       {/* FAQ */}
       <section className="mx-auto max-w-7xl px-4 py-16">
-        <p className="inline-block rounded-full bg-red-700 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white">
+        <p className="inline-block rounded-full bg-calm px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white">
           Questions
         </p>
         <h2 className="mt-4 font-display text-5xl leading-[0.95] text-neutral-900 md:text-7xl">
@@ -729,7 +729,7 @@ export default function HomePage() {
             <details key={f.q} className="group border-b border-neutral-200 py-5 first:border-t">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4">
                 <span className="text-lg font-bold text-neutral-900">{f.q}</span>
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-red-50 text-xl text-red-700 transition group-open:rotate-45 group-open:bg-red-700 group-open:text-white">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-calm-light text-xl text-calm transition group-open:rotate-45 group-open:bg-calm group-open:text-white">
                   +
                 </span>
               </summary>

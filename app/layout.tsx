@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Anton, Archivo, Instrument_Serif } from "next/font/google";
+import { Anton, Inter, Instrument_Serif } from "next/font/google";
 import { cookies } from "next/headers";
 import "./globals.css";
 import Header from "@/components/Header";
@@ -15,7 +15,7 @@ const displayFont = Anton({
   weight: ["400"],
 });
 
-const bodyFont = Archivo({
+const bodyFont = Inter({
   subsets: ["latin"],
   variable: "--font-body",
   weight: ["400", "500", "600", "700", "800"],

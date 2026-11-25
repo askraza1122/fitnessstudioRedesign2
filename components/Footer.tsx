@@ -10,7 +10,7 @@ import {
 } from "@/lib/data";
 
 const socialIcon =
-  "flex h-10 w-10 items-center justify-center rounded-full bg-red-700 text-white transition hover:bg-neutral-900";
+  "flex h-10 w-10 items-center justify-center rounded-full bg-calm text-white transition hover:bg-neutral-900";
 
 export default function Footer() {
   return (
@@ -107,7 +107,7 @@ export default function Footer() {
               href={waLink("Hello Fitness Studio! I want to know more about your programs.")}
               target="_blank"
               rel="noreferrer"
-              className="mt-4 inline-block rounded-full bg-neutral-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-red-700"
+              className="mt-4 inline-block rounded-full bg-neutral-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-calm"
             >
               Chat on WhatsApp →
             </a>

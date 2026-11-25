@@ -20,6 +20,13 @@ const config: Config = {
           light: "#FDECEA",
           soft: "#FFF5F5",
         },
+        /* Calm sage green — the wellness counterweight to brand red */
+        calm: {
+          DEFAULT: "#245C3D",
+          dark: "#1B4630",
+          light: "#E9F1EA",
+          soft: "#F3F7F3",
+        },
         ink: "#141414",
         red: {
           700: "#E10600",

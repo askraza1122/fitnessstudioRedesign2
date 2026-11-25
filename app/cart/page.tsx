@@ -19,7 +19,7 @@ export default function CartPage() {
   if (count === 0) {
     return (
       <div className="mx-auto max-w-3xl px-4 py-20 text-center">
-        <h1 className="text-3xl font-extrabold text-neutral-900">Your cart is empty</h1>
+        <h1 className="font-display text-5xl text-neutral-900">Your cart is empty</h1>
         <p className="mt-3 text-neutral-600">
           Browse the shop and add a product to get started.
         </p>
@@ -76,7 +76,7 @@ export default function CartPage() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-14">
-      <h1 className="text-4xl font-extrabold text-neutral-900">Your Cart</h1>
+      <h1 className="font-display text-6xl leading-[0.95] text-neutral-900 md:text-7xl">Your <span className="text-outline">Cart</span></h1>
 
       <div className="mt-8 grid gap-10 lg:grid-cols-3">
         <div className="lg:col-span-2">
@@ -84,7 +84,7 @@ export default function CartPage() {
             {lines.map((l) => (
               <div
                 key={l.product.slug}
-                className="flex items-center gap-4 rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm"
+                className="flex items-center gap-4 rounded-[2rem] border border-neutral-200 bg-white p-4 shadow-sm"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -98,7 +98,7 @@ export default function CartPage() {
                   <div className="mt-2 flex items-center gap-2">
                     <button
                       onClick={() => setQty(l.product.slug, l.qty - 1)}
-                      className="h-8 w-8 rounded-full border border-neutral-300 font-bold hover:border-red-700 hover:text-red-700"
+                      className="h-8 w-8 rounded-full border border-neutral-300 font-bold hover:border-calm hover:text-calm"
                       aria-label="Decrease quantity"
                     >
                       −
@@ -106,7 +106,7 @@ export default function CartPage() {
                     <span className="w-6 text-center font-semibold">{l.qty}</span>
                     <button
                       onClick={() => setQty(l.product.slug, l.qty + 1)}
-                      className="h-8 w-8 rounded-full border border-neutral-300 font-bold hover:border-red-700 hover:text-red-700"
+                      className="h-8 w-8 rounded-full border border-neutral-300 font-bold hover:border-calm hover:text-calm"
                       aria-label="Increase quantity"
                     >
                       +
@@ -132,8 +132,8 @@ export default function CartPage() {
         </div>
 
         <div>
-          <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
-            <h2 className="text-xl font-extrabold text-neutral-900">
+          <div className="rounded-[2rem] border border-neutral-200 bg-white p-6 shadow-sm">
+            <h2 className="font-display text-3xl text-neutral-900">
               Cash on Delivery — checkout
             </h2>
             <p className="mt-1 text-sm text-neutral-500">
@@ -146,25 +146,25 @@ export default function CartPage() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Full name"
-                className="w-full rounded-xl border border-neutral-300 px-4 py-2.5 outline-none focus:border-red-700"
+                className="w-full rounded-xl border border-neutral-300 px-4 py-2.5 outline-none focus:border-calm"
               />
               <input
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder="Phone number"
-                className="w-full rounded-xl border border-neutral-300 px-4 py-2.5 outline-none focus:border-red-700"
+                className="w-full rounded-xl border border-neutral-300 px-4 py-2.5 outline-none focus:border-calm"
               />
               <input
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
                 placeholder="Delivery address"
-                className="w-full rounded-xl border border-neutral-300 px-4 py-2.5 outline-none focus:border-red-700"
+                className="w-full rounded-xl border border-neutral-300 px-4 py-2.5 outline-none focus:border-calm"
               />
               <input
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
                 placeholder="City"
-                className="w-full rounded-xl border border-neutral-300 px-4 py-2.5 outline-none focus:border-red-700"
+                className="w-full rounded-xl border border-neutral-300 px-4 py-2.5 outline-none focus:border-calm"
               />
             </div>
 

@@ -10,37 +10,39 @@ export default function AboutPage() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-gradient-to-b from-red-50 to-white">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-14 md:grid-cols-2">
+      <section className="bg-gradient-to-b from-calm-soft to-white">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-14 md:grid-cols-2 md:py-20">
           <div>
-            <p className="text-sm font-bold uppercase tracking-widest text-red-700">
+            <p className="inline-block rounded-full bg-calm px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white">
               About Ayeesha
             </p>
-            <h1 className="mt-3 text-4xl font-extrabold leading-tight text-neutral-900">
-              A trainer, a fighter, and a voice for women&apos;s safety
+            <h1 className="mt-5 font-display text-5xl leading-[0.95] text-neutral-900 md:text-6xl">
+              A trainer, a fighter, and a voice for{" "}
+              <span className="text-calm">women&apos;s safety</span>
             </h1>
-            <p className="mt-4 leading-relaxed text-neutral-700">
+            <p className="mt-5 text-lg leading-relaxed text-neutral-600">
               Ayeesha Muzammil is the founder and CEO of Fitness Studio Co.,
               Lahore. She is Pakistan&apos;s first certified Para-Taekwondo
               instructor — a Kukkiwon black belt from South Korea — and a
               certified yoga trainer from the University of California.
             </p>
           </div>
-          <div>
+          <div className="relative">
+            <div className="absolute inset-0 rotate-2 rounded-[2.5rem] bg-calm" />
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/media/IMG-20261114-WA0044-enhanced.webp"
               alt="Ayeesha Muzammil"
-              className="w-full rounded-3xl object-cover shadow-xl"
+              className="relative w-full rounded-[2.5rem] object-cover shadow-xl"
             />
           </div>
         </div>
       </section>
 
       {/* Bio */}
-      <section className="mx-auto max-w-4xl px-4 py-14">
-        <h2 className="text-2xl font-extrabold text-neutral-900">Her story</h2>
-        <div className="mt-4 space-y-4 leading-relaxed text-neutral-700">
+      <section className="mx-auto max-w-4xl px-4 py-14 md:py-20">
+        <h2 className="font-display text-4xl text-neutral-900">Her story</h2>
+        <div className="mt-5 space-y-4 text-lg leading-relaxed text-neutral-700">
           <p>
             Ayeesha founded Fitness Studio after 14 years of marriage — with a
             mission that was sparked by the APS incident and her father&apos;s
@@ -69,8 +71,8 @@ export default function AboutPage() {
           </p>
         </div>
 
-        <h2 className="mt-12 text-2xl font-extrabold text-neutral-900">Credentials</h2>
-        <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+        <h2 className="mt-14 font-display text-4xl text-neutral-900">Credentials</h2>
+        <ul className="mt-6 grid gap-3 sm:grid-cols-2">
           {[
             "Pakistan's first certified Para-Taekwondo instructor — Kukkiwon black belt, South Korea",
             "Certified yoga trainer — University of California",
@@ -81,8 +83,8 @@ export default function AboutPage() {
             "Heritage Global Mentorship Award (Africa)",
             "Award by Qasim Ali Shah Foundation",
           ].map((c) => (
-            <li key={c} className="rounded-xl border border-neutral-200 bg-white p-4 text-sm leading-relaxed shadow-sm">
-              <span className="mr-2 font-bold text-red-700">✓</span>
+            <li key={c} className="rounded-[2rem] border border-neutral-200 bg-white p-5 text-sm leading-relaxed shadow-sm">
+              <span className="mr-2 font-bold text-calm">✓</span>
               {c}
             </li>
           ))}
@@ -90,19 +92,19 @@ export default function AboutPage() {
       </section>
 
       {/* Recognition graphics */}
-      <section className="bg-neutral-50 py-14">
+      <section className="bg-calm-soft py-14 md:py-20">
         <div className="mx-auto max-w-7xl px-4">
-          <h2 className="text-2xl font-extrabold text-neutral-900">Recognition</h2>
-          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <h2 className="font-display text-4xl text-neutral-900">Recognition</h2>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {RECOGNITION_GRAPHICS.map((g) => (
-              <figure key={g.src} className="overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm">
+              <figure key={g.src} className="group overflow-hidden rounded-[2rem] border border-neutral-200 bg-white shadow-sm">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={g.src} alt={g.caption} className="aspect-[4/3] w-full object-cover" />
-                <figcaption className="p-3 text-sm text-neutral-600">{g.caption}</figcaption>
+                <img src={g.src} alt={g.caption} className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105" />
+                <figcaption className="p-4 text-sm text-neutral-600">{g.caption}</figcaption>
               </figure>
             ))}
-            <div className="flex flex-col justify-center rounded-2xl bg-red-700 p-6 text-white">
-              <p className="text-2xl font-extrabold">5,000+ women trained</p>
+            <div className="flex flex-col justify-center rounded-[2rem] bg-red-700 p-6 text-white">
+              <p className="font-display text-3xl">5,000+ women trained</p>
               <p className="mt-2 text-red-100">
                 300+ workshops · 12+ MoU partners · 8 media features
               </p>
@@ -118,34 +120,36 @@ export default function AboutPage() {
       </section>
 
       {/* Book */}
-      <section className="mx-auto max-w-7xl px-4 py-14">
-        <h2 className="text-2xl font-extrabold text-neutral-900">Pakistan&apos;s first female author of a self-defense book</h2>
-        <p className="mt-3 max-w-3xl leading-relaxed text-neutral-700">
+      <section className="mx-auto max-w-7xl px-4 py-14 md:py-20">
+        <h2 className="font-display text-4xl leading-tight text-neutral-900">
+          Pakistan&apos;s first female author of a self-defense book
+        </h2>
+        <p className="mt-4 max-w-3xl text-lg leading-relaxed text-neutral-600">
           Ayeesha wrote the first self-defense book by a woman in Pakistan —
           putting practical safety knowledge into the hands of girls and women
           everywhere.
         </p>
-        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
           {BOOK_PHOTOS.map((b) => (
-            <figure key={b.src} className="overflow-hidden rounded-2xl border border-neutral-200 shadow-sm">
+            <figure key={b.src} className="group overflow-hidden rounded-[2rem] border border-neutral-200 shadow-sm">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={b.src} alt={b.caption} className="aspect-[4/3] w-full object-cover" />
-              <figcaption className="p-3 text-sm text-neutral-600">{b.caption}</figcaption>
+              <img src={b.src} alt={b.caption} className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-105" />
+              <figcaption className="p-4 text-sm text-neutral-600">{b.caption}</figcaption>
             </figure>
           ))}
         </div>
       </section>
 
       {/* TV interview */}
-      <section className="mx-auto max-w-4xl px-4 pb-16">
-        <h2 className="text-2xl font-extrabold text-neutral-900">Watch: TV interview on women&apos;s safety</h2>
-        <div className="mt-6 overflow-hidden rounded-2xl shadow-lg">
+      <section className="mx-auto max-w-4xl px-4 pb-16 md:pb-24">
+        <h2 className="font-display text-4xl text-neutral-900">Watch: TV interview on women&apos;s safety</h2>
+        <div className="mt-8 overflow-hidden rounded-[2rem] shadow-lg">
           <video controls preload="metadata" className="w-full" src={TV_INTERVIEW_VIDEO.src}>
             Your browser does not support the video tag.
           </video>
         </div>
         <p className="mt-3 text-sm text-neutral-500">{TV_INTERVIEW_VIDEO.caption}</p>
-        <div className="mt-8 text-center">
+        <div className="mt-10 text-center">
           <Link
             href="/programs"
             className="inline-block rounded-full bg-red-700 px-6 py-3 font-semibold text-white hover:bg-red-800"

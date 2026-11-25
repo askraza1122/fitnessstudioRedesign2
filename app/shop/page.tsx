@@ -8,7 +8,7 @@ export default function ShopPage() {
       {/* Modern page head */}
       <section className="bg-dots border-b border-neutral-200">
         <div className="mx-auto max-w-7xl px-4 py-14 md:py-20">
-          <p className="inline-block rounded-full bg-red-700 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white">
+          <p className="inline-block rounded-full bg-calm px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white">
             Herbal wellness · Cash on Delivery
           </p>
           <h1 className="mt-5 font-display text-6xl leading-[0.95] text-neutral-900 md:text-8xl">

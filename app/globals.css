@@ -100,5 +100,5 @@ h2 {
 }
 
 .kicker {
-  @apply text-xs font-bold uppercase tracking-[0.25em] text-red-700;
+  @apply text-xs font-bold uppercase tracking-[0.25em] text-calm;
 }
