@@ -65,23 +65,60 @@ export default function HomePage() {
                 Shop Products
               </Link>
             </div>
-            <dl className="mt-10 flex max-w-xl flex-wrap gap-x-8 gap-y-4 border-t border-neutral-200 pt-6">
-              {STATS.slice(0, 3).map((s) => (
-                <div key={s.label}>
-                  <dt className="sr-only">{s.label}</dt>
-                  <dd className="font-display text-2xl text-neutral-900">
-                    {s.value}
-                  </dd>
-                  <dd className="mt-0.5 text-xs font-semibold uppercase tracking-wider text-neutral-500">
-                    {s.label}
-                  </dd>
+            {/* Trust badges — the enrollment facts as icons, not a repeat of the stats bar below */}
+            <div className="mt-10 flex flex-wrap gap-3 border-t border-neutral-200 pt-6">
+              {[
+                {
+                  title: "4 weeks",
+                  sub: "Every course",
+                  icon: (
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5" aria-hidden>
+                      <rect x="3" y="4" width="18" height="18" rx="2" />
+                      <line x1="16" y1="2" x2="16" y2="6" />
+                      <line x1="8" y1="2" x2="8" y2="6" />
+                      <line x1="3" y1="10" x2="21" y2="10" />
+                    </svg>
+                  ),
+                },
+                {
+                  title: "Enroll via WhatsApp",
+                  sub: "Chat to book your batch",
+                  icon: (
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5" aria-hidden>
+                      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                    </svg>
+                  ),
+                },
+                {
+                  title: "Cash on Delivery",
+                  sub: "Available in the shop",
+                  icon: (
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5" aria-hidden>
+                      <rect x="2" y="6" width="20" height="12" rx="2" />
+                      <circle cx="12" cy="12" r="2.5" />
+                      <path d="M6 12h.01M18 12h.01" />
+                    </svg>
+                  ),
+                },
+              ].map((b) => (
+                <div
+                  key={b.title}
+                  className="flex items-center gap-3 rounded-2xl border border-neutral-200 bg-white px-4 py-3 shadow-sm"
+                >
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-red-50 text-red-700">
+                    {b.icon}
+                  </span>
+                  <span>
+                    <span className="block text-sm font-bold leading-tight text-neutral-900">
+                      {b.title}
+                    </span>
+                    <span className="block text-xs leading-tight text-neutral-500">
+                      {b.sub}
+                    </span>
+                  </span>
                 </div>
               ))}
-            </dl>
-            <p className="mt-6 text-sm text-neutral-500">
-              Every course is {COURSE_DURATION} · Enroll via WhatsApp · Cash on
-              Delivery available in the shop
-            </p>
+            </div>
           </div>
           <div className="animate-fade-up relative md:col-span-5 [animation-delay:150ms]">
             <div
