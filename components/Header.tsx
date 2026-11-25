@@ -10,7 +10,6 @@ import type { Region } from "@/lib/geo";
 
 const NAV = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
   { href: "/programs", label: "Programs" },
   { href: "/shop", label: "Shop" },
   { href: "/achievements", label: "Achievements" },
