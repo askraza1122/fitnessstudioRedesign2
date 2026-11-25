@@ -38,7 +38,7 @@ export default function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3">
         <Link href="/" className="flex shrink-0 items-center gap-2">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.png" alt="Fitness Studio" className="h-14 w-auto" />
+          <img src="/logo.png" alt="Fitness Studio" className="h-20 w-auto md:h-28" />
         </Link>
 
         <nav className="hidden items-center gap-5 lg:flex">
